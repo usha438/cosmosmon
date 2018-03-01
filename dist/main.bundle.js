@@ -1718,7 +1718,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var BotsService = /** @class */ (function () {
     function BotsService(http) {
         this.http = http;
-        this.endpoint = 'https://' + window.location.href + '/bot/';
+        this.endpoint = window.location.href + 'bot/';
         this.metricsEndpoint = 'https://cosmongoappl.azurewebsites.net/getMetrics/';
         // endpoint = 'https://0fa0c336.ngrok.io/bot/';
         this.botSource = new __WEBPACK_IMPORTED_MODULE_2_rxjs_BehaviorSubject__["a" /* BehaviorSubject */]("");
