@@ -31,9 +31,9 @@ app.use(function(req, res, next) {
 //Connecting to the MongoDB database 'test_for_db' running on 27017
 // mongoose.connect("mongodb://shrikar:63916@ds131258.mlab.com:31258/minsights");
 //enable the mongoose database uri for both testing and developmentvar mongoClient = require("mongodb").MongoClient;
-mongoose.connect("mongodb://walgreenscosmo:4e2olbW1wWhOBgLQx3iYea1FQLH9mLEJcAFwf2U6N9FYtbxVI9oNzq3TkZFwCFQQ2jXs23c35KqLY2Yk5bAaow==@walgreenscosmo.documents.azure.com:10255/?ssl=true")
+//mongoose.connect("mongodb://walgreenscosmo:4e2olbW1wWhOBgLQx3iYea1FQLH9mLEJcAFwf2U6N9FYtbxVI9oNzq3TkZFwCFQQ2jXs23c35KqLY2Yk5bAaow==@walgreenscosmo.documents.azure.com:10255/?ssl=true")
  
-//mongoose.connect(config.mongoURI[app.settings.env]);
+mongoose.connect(config.mongoURI[app.settings.env]);
 mongoose.connection.on('error', (err) => {
   //if conenction fails
   console.log("\n");
