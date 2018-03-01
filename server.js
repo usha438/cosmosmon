@@ -9,9 +9,7 @@ require('dotenv').config();
 const app = express();
 const router = express.Router();
 var mongoClient = require("mongodb").MongoClient;
-mongoClient.connect("mongodb://walgreenscosmo:4e2olbW1wWhOBgLQx3iYea1FQLH9mLEJcAFwf2U6N9FYtbxVI9oNzq3TkZFwCFQQ2jXs23c35KqLY2Yk5bAaow==@walgreenscosmo.documents.azure.com:10255/?ssl=true", function (err, db) {
-  db.close();
-});
+
 
 var port = process.env.PORT || 8000;
 // var uri=process.env.URI;
@@ -32,7 +30,9 @@ app.use(function(req, res, next) {
 
 //Connecting to the MongoDB database 'test_for_db' running on 27017
 // mongoose.connect("mongodb://shrikar:63916@ds131258.mlab.com:31258/minsights");
-//enable the mongoose database uri for both testing and development
+//enable the mongoose database uri for both testing and developmentvar mongoClient = require("mongodb").MongoClient;
+mongoClient.connect("mongodb://walgreenscosmo:4e2olbW1wWhOBgLQx3iYea1FQLH9mLEJcAFwf2U6N9FYtbxVI9oNzq3TkZFwCFQQ2jXs23c35KqLY2Yk5bAaow==@walgreenscosmo.documents.azure.com:10255/?ssl=true", function (err, db) {
+ 
 mongoose.connect(config.mongoURI[app.settings.env]);
 mongoose.connection.on('error', (err) => {
   //if conenction fails
@@ -55,6 +55,8 @@ app.use('/', express.static(path.join(__dirname, 'dist')));
 
 app.get('/index',function(req,res){
 	res.sendFile(__dirname+"/dist/index.html");
+db.close(); 
+});
 });
 
 app.listen(port);
