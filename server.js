@@ -8,6 +8,10 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const app = express();
 const router = express.Router();
+var mongoClient = require("mongodb").MongoClient;
+mongoClient.connect("mongodb://walgreenscosmo:4e2olbW1wWhOBgLQx3iYea1FQLH9mLEJcAFwf2U6N9FYtbxVI9oNzq3TkZFwCFQQ2jXs23c35KqLY2Yk5bAaow==@walgreenscosmo.documents.azure.com:10255/?ssl=true", function (err, db) {
+  db.close();
+});
 
 var port = process.env.PORT || 8000;
 // var uri=process.env.URI;
